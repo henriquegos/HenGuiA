@@ -8,14 +8,11 @@ dado2 = randint(1,6)
 somad = dado1 + dado2
 ganhou_aposta = True
 
-
 ficha = 50
-
 
 nome = input("Bem vindo!! Digite seu nome para começar a jogar Craps:")
 apostar_ou_nn = input("{0}, você tem {1} fichas. Deseja apostar nessa rodada?(Sim ou Não)".format(nome, ficha))
 
-if apostar_ou_nn == "Sim":
 if apostar_ou_nn == "Não":
     ficha = 0
     print("O jogo acabou! Seu número de fichas é {0}".format(ficha))
@@ -37,9 +34,6 @@ else:
     print(dado1)
     print(dado2)
 
-else:
-    ficha = 0
-    print("O jogo acabou! Seu número de fichas é {0}".format(ficha))    while ganhou_aposta:
     while ganhou_aposta:
         if modalidade_t == "Sim":
             def twelve (ficha, aposta):
