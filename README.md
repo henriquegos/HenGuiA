@@ -13,4 +13,4 @@ if apostar_ou_nn == "Sim":
 
 else apostar_ou_nn == "Não":
     ficha = 0
-    print("O jogo acabou! Seu numero de fichas é {0}".format(ficha))
+    print("O jogo acabou! Seu número de fichas é {0}".format(ficha))
