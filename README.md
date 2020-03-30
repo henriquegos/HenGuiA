@@ -40,6 +40,7 @@ else:
 else:
     ficha = 0
     print("O jogo acabou! Seu número de fichas é {0}".format(ficha))    while ganhou_aposta:
+    while ganhou_aposta:
         if modalidade_t == "Sim":
             def twelve (ficha, aposta):
                 if somad == 12 : 
