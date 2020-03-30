@@ -15,13 +15,11 @@ apostar_ou_nn = input("{0}, você tem {1} fichas. Deseja apostar nessa rodada?(S
 
 if apostar_ou_nn == "Não":
     ficha = 0
-    print("O jogo acabou! Seu número de fichas é {0}".format(ficha))
     print("O jogo acabou!! Seu número de fichas é {0}".format(ficha))
 
 else:
     aposta = int(input("Quanta fichas deseja apostar?"))
     while aposta >= ficha:
-        print("Você tem somente {0} fichas disponíveis para apostar".format(ficha))
         print("Você tem somente {0} fichas disponíveis para apostar!".format(ficha))
         aposta = int(input("Digite novamente quantas fichas deseja apostar?"))
 
