@@ -17,16 +17,26 @@ valor_B = 0
 valor_C = 0
 valor_D = 0
 #INFORMAÇÕES INICIAIS + INSTRUÇÕES
-inicio = input(" \n => VOCÊ COMEÇA O JOGO COM {0} FICHAS. \n Deseja iniciar uma nova aposta? (digite 's' para SIM ou 'n' para NÃO) \n #: " .format(fichas))
+
+regras = input(" \n => VOCÊ COMEÇA O JOGO COM {0} FICHAS. \n Antes de apostar, quer conhecer as regras? (digite 's' para LER ou 'n' para PULAR e PROSSEGUIR" .format(fichas)) 
+if regras == 's':
+    print ("===========================================  Você pediu por ajuda. =========================================== \n  \n Cada modalidade funciona da seguinte maneira: \n ")
+    print ("_A-) PASS LINE BET: (--#ESTA APOSTA SÓ PODE SER FEITA NA FASE 'COMEOUT'#--) \n \n Se a soma for (7 ou 11), você GANHA o que apostou.\n Se for (2,3 ou 12), você PERDE o que apostou.\n Se for (4, 5, 6, 8, 9 ou 10), o jogo vai para a fase 'POINT' \n  Nesta fase, novos dados serão rolados. \n Se a nova soma for a mesma que o valor inicial (4, 5, 6, 8, 9 ou 10), você GANHA o que apostou. \n Se sair uma soma 7, você PERDE TUDO! \n Se sair qualquer outro número, você continua na fase 'POINT' até acertar a soma inicial ou somar 7. \n")
+    print ("_B-) FIELD: \n \n Se a soma for (5, 6, 7 ou 8), você PERDE TUDO! \n Se a soma for (3, 4, 9, 10 ou 11), você GANHA o que apostou. \n Se a soma for (2), você GANHA 2x do que apostou. \n Se a soma for (12), você GANHA 3x o que apostou. \n ")
+    print ("_C-) ANY CRAPS: \n \n Se a soma for (2, 3 ou 12), você GANHA 7x o que apostou! \n Mas, se a soma der qualquer outro número, você PERDE a aposta. \n")
+    print ("_D-) TWELVE: \n\n Se a soma der (12), você GANHA 30x o que apostou!! \n Mas, se der qualquer outro valor, você PERDE a aposta. \n")
+
+inicio = input (" Deseja iniciar uma nova aposta? (digite 's' para SIM ou 'n' para NÃO) \n #: ")
 if inicio == 's':
      JOGO = True
 else:
     print ("Até a próxima!")
 
+
 #NOVA RODADA:
 while JOGO and fichas > 0:
     #COMEOUT
-    print (" $$ FICHAS: {0} \n ==> Você está na fase: COMEOUT <== \n\n Nesta fase, você pode escolher entre várias modalidades diferentes de apostas. \n Após terminar suas apostas, digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! " .format(fichas))
+    print ("\n $$ FICHAS: {0} \n ==> Você está na fase: COMEOUT <== \n\n Nesta fase, você pode escolher entre várias modalidades diferentes de apostas. \n Após terminar suas apostas, digite 'jogar' para ROLAR OS DADOS e tentar a sorte!!  \n  \f Obs.: Em qualquer instante, você pode mudar sua aposta. Basta digitar novamente a letra equivalente à ela. \n \n ¬ Para entender cada modalidade, digite 'ajuda' \n  " .format(fichas))
     if show_PLB:
         print (" _A-) PASS LINE BET" )
     if show_FIELD:
@@ -35,7 +45,7 @@ while JOGO and fichas > 0:
         print (" _C-) ANY CRAPS" )
     if show_TWELVE:
         print (" _D-) TWELVE" ) 
-    pergunta1 = input(" \n ¬ Para escolher a modalidade, digite a letra correspondente (em maiúscula). \n ¬ Para sair, digite SAIR. \n ¬ Para entender cada modalidade, digite 'ajuda' \n  \f Obs.: Em qualquer instante, você pode mudar sua aposta. Basta digitar novamente a letra equivalente à ela. \n\n ... Apostas terminadas? digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! ($$)  \n #: ")
+    pergunta1 = input(" \n ¬ Para escolher a modalidade, digite a letra correspondente (em maiúscula). \n ¬ Para sair, digite SAIR. \n\n ... Digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! ($$)   \n  #: ")
     
     if pergunta1 == 'A':
         show_PLB = False
@@ -99,14 +109,6 @@ while JOGO and fichas > 0:
     # use a função if not show_NOME (o 'not' vai fazer com que o FALSE vire true)
     # e, assim, configure TODAS as regras para o jogo
                 #Cuidado com o endentamento. Comece daqui
-
-
-
-
-
-
-
-
 
 
 
