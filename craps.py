@@ -2,6 +2,7 @@
 print("  \t !! Bem vindo ao jogo de CRAPS simplificado !! \n Este jogo foi feito pelos alunos Guilherme Rosada e Henrique Gabriel Oliveira Silva \n para a Disciplina de Design de Software, sob orientação do professor Andrew")
 
 #PRESET DO GAME + VARIÁVEIS que vão acompanhar todo o programa
+from random import randint
 dado1 = 0
 dado2 = 0
 SOMA = dado1 + dado2
@@ -35,6 +36,7 @@ while JOGO and fichas > 0:
     if show_TWELVE:
         print (" _D-) TWELVE" ) 
     pergunta1 = input(" \n ¬ Para escolher a modalidade, digite a letra correspondente (em maiúscula). \n ¬ Para sair, digite SAIR. \n ¬ Para entender cada modalidade, digite 'ajuda' \n  \f Obs.: Em qualquer instante, você pode mudar sua aposta. Basta digitar novamente a letra equivalente à ela. \n\n ... Apostas terminadas? digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! ($$)  \n #: ")
+    
     if pergunta1 == 'A':
         show_PLB = False
         print ("você escolheu _A-) PASS LINE BET !")
@@ -76,6 +78,25 @@ while JOGO and fichas > 0:
             confirmar_apostas = input(" Você apostou os valores: \n \t {0} em PASS LIBE BET \n \t {1} em FIELD \n \t {2} em ANY CRAPS \n \t {3} em TWELVE \n ... Deseja confirmar as apostas? (digite 's' para CONFIRMAR ou 'n' para APOSTAR DE NOVO) " .format(valor_A, valor_B, valor_C, valor_D))
             if confirmar_apostas == 's':
                 print ("ROOOOOOOOLLL THE DICE!!! ")
+#ADICIONAR A EXECUÇÃO DAS APOSTAS AQUI
+                dado1 = randint
+                dado2 = randint
+    #obs.: Cada aposta que o jogar selecionou está com o show_NOME como 'FALSE'
+    # use a função if not show_NOME (o 'not' vai fazer com que o FALSE vire true)
+    # e, assim, configure TODAS as regras para o jogo
+                #Cuidado com o endentamento. Comece daqui
+                
+
+
+
+
+
+
+
+
+
+
+
             elif confirmar_apostas == 'n':
                 show_PLB = True
                 show_ANY = True
