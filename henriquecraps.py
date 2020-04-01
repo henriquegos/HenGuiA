@@ -8,6 +8,9 @@ dado2 = randint(1,6)
 somad = dado1 + dado2
 ganhou_aposta = True
 
+print ('olá')
+
+
 ficha = 50
 
 nome = input("Bem vindo!! Digite seu nome para começar a jogar Craps:")
