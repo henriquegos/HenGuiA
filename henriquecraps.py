@@ -1,6 +1,7 @@
 # HenGuiA
 #exercício programa da matéria Design de Software 
 
+#VARIÁVEIS QUE VÃO SER USADAS AO DECORRER DO PROJETO
 from random import randint
 
 dado1 = randint(1,6)
@@ -8,25 +9,28 @@ dado2 = randint(1,6)
 somad = dado1 + dado2
 ganhou_aposta = True
 
+ficha = 50
+
 print ('olá')
 
 
-ficha = 50
 
-nome = input("Bem vindo!! Digite seu nome para começar a jogar Craps:")
+#BOAS VINDAS
+#PERGUNTA SE QUER APOSTAR
+nome = input("Bem vindo!! Digite seu nome para começar a jogar Craps:") 
 apostar_ou_nn = input("{0}, você tem {1} fichas. Deseja apostar nessa rodada?(Sim ou Não)".format(nome, ficha))
 
 if apostar_ou_nn == "Não":
-    ficha = 0
+    ficha = 0  #PQ ZERA? era só pro jogo acabar, mas ele ainda manter o que já ganhou.
     print("O jogo acabou!! Seu número de fichas é {0}".format(ficha))
 
 else:
     aposta = int(input("Quanta fichas deseja apostar?"))
     while aposta >= ficha:
-        print("Você tem somente {0} fichas disponíveis para apostar!".format(ficha))
+        print("Você tem somente {0} fichas disponíveis para apostar!".format(ficha))  #isso é algo interessante que eu não coloquei no meu. Vou implementar
         aposta = int(input("Digite novamente quantas fichas deseja apostar?"))
 
-    
+   #COMEOUT - escolher que tipo de aposta ele quer fazer 
     print("{0} agora vamos entrar na fase chamada Come Out".format(nome))
     print("Na fase Come Out você pode apostar nas modalidades Pass Line Bet, Field, Any Craps e Twelve.")
     modalidade_plb = input("Você deseja jogar na modalidade Pass Line Bet?(Sim OU Não)")
@@ -36,6 +40,8 @@ else:
 
     print(dado1)
     print(dado2)
+
+    #APOSTAS
 
     while ganhou_aposta:
         if modalidade_t == "Sim":
