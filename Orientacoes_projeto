@@ -1,0 +1,12 @@
+Oi, Henrique. 
+Vamos usar esse arquivo para orientações do que fazer no projeto. 
+
+Li seu código. Vou tentar implementar alguns pontos que eu achei interessante no seu ao arquivo craps.py 
+(vou utilizar esse pq ele tá com uma interface mais completa)
+{Isso, no quesito introdução: Boas vindas, apresentar as apostas e escolher quais apostas quer fazer}
+
+Sobre o Jogo:
+No seu código, parece q só tem uma opção pra valor de aposta.
+Pelo que eu entendi, pode-se fazer várias apostas simultaneamente (com valores diferentes para cada modalidade, inclusive)
+
+
