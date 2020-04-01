@@ -4,12 +4,14 @@ Vamos usar esse arquivo para orientações do que fazer no projeto.
 Li seu código. Vou tentar implementar alguns pontos que eu achei interessante no seu ao arquivo craps.py 
 (vou utilizar esse pq ele tá com uma interface mais completa)
 {Isso, no quesito introdução: Boas vindas, apresentar as apostas e escolher quais apostas quer fazer}
-
+#FEITO (OK)
 Sobre o Jogo:
 No seu código, parece q só tem uma opção pra valor de aposta.
 Pelo que eu entendi, pode-se fazer várias apostas simultaneamente (com valores diferentes para cada modalidade, inclusive)
+#FEITO (OK)
 
 DICA: 
+~~ a partir daqui, tem q fazer.
 Na hora de estruturar as apostas, tenta rodar elas num arquivo separado. (crie outro)
 Assim, fica mais fácil de rodar os testes num prompt de comando do anaconda mesmo.
 Coloca só as variáveis que são necessárias. 
