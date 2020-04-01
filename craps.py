@@ -47,5 +47,5 @@ while JOGO and fichas > 0:
     else:
         print ("Não te entendi. Até a próxima!")
         JOGO = False
-
-print ("Que pena! Você não tem mais moedas. \n Até a próxima !!")
+if fichas <=0:
+    print ("Que pena! Você não tem mais moedas. \n Até a próxima !!")
