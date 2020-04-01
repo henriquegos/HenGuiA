@@ -74,10 +74,24 @@ while JOGO and fichas > 0:
             show_ANY = True
             show_FIELD = True
             show_TWELVE = True
+        elif valor_total == 0:
+            print (" Você precisa apostar para poder jogar. Por favor, refaça as apostas! ")
+            show_PLB = True
+            show_ANY = True
+            show_FIELD = True
+            show_TWELVE = True
+        elif valor_A <0 or valor_B <0 or valor_C <0 or valor_D <0:
+            print (" Você apostou um valor que não é válido. Refaça suas apostas! ")
+            show_PLB = True
+            show_ANY = True
+            show_FIELD = True
+            show_TWELVE = True
         elif valor_total <= fichas:
             confirmar_apostas = input(" Você apostou os valores: \n \t {0} em PASS LIBE BET \n \t {1} em FIELD \n \t {2} em ANY CRAPS \n \t {3} em TWELVE \n ... Deseja confirmar as apostas? (digite 's' para CONFIRMAR ou 'n' para APOSTAR DE NOVO) " .format(valor_A, valor_B, valor_C, valor_D))
             if confirmar_apostas == 's':
                 print ("ROOOOOOOOLLL THE DICE!!! ")
+
+
 #ADICIONAR A EXECUÇÃO DAS APOSTAS AQUI
                 dado1 = randint
                 dado2 = randint
@@ -85,7 +99,7 @@ while JOGO and fichas > 0:
     # use a função if not show_NOME (o 'not' vai fazer com que o FALSE vire true)
     # e, assim, configure TODAS as regras para o jogo
                 #Cuidado com o endentamento. Comece daqui
-                
+
 
 
 
