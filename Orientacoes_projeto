@@ -9,4 +9,10 @@ Sobre o Jogo:
 No seu código, parece q só tem uma opção pra valor de aposta.
 Pelo que eu entendi, pode-se fazer várias apostas simultaneamente (com valores diferentes para cada modalidade, inclusive)
 
+DICA: 
+Na hora de estruturar as apostas, tenta rodar elas num arquivo separado. (crie outro)
+Assim, fica mais fácil de rodar os testes num prompt de comando do anaconda mesmo.
+Coloca só as variáveis que são necessárias. 
+Pra facilitar, não precisa colocar input. Tenta fazer igual a gente fez nos exercícios de sala.
+tipo, no valor de aposta, por exemplo: Ao inves de por input, já determina um valor.
 
