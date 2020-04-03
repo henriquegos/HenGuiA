@@ -37,7 +37,6 @@ while not JOGO and CONTINUAR :  #perceba aqui, que para ter JOGO, ele deve estar
         CONTINUAR = False
     else:
         print ("Não te entendi. ")
-        FIMDEJOGO = True
 
 
     #NOVA RODADA:
@@ -109,17 +108,56 @@ while not JOGO and CONTINUAR :  #perceba aqui, que para ter JOGO, ele deve estar
                 if confirmar_apostas == 's':
                     print ("ROOOOOOOOLLL THE DICE!!! ")
                     JOGO = False
-                    CONTINUAR = True #lembre-se que tem 2 variáveis p/ o jogo rodar todo
+                    CONTINUAR = True 
+                    #começando a executar as regras
+                    dado1 = randint(1,6)
+                    dado2 = randint(1,6)
+                    somad = dado1 + dado2
+                    print("Os dados foram jogados, e em um dos dados o valor sorteado é {0} e no outro dado o valor sorteado é {1}. Logo, a soma dos dados é {3}".format(dado1, dado2, somad))
 
+                    if not show_FIELD:
+                        def field (fichas, valor_B):
+                            if somad == 5 or somad == 6 or somad == 7 or somad == 8:
+                                fichas = fichas - valor_B
+                            elif somad == 3 or somad == 4 or somad == 9 or somad == 10 or somad == 11:
+                                fichas = fichas + valor_B
+                            elif somad == 2:
+                                fichas = fichas + 2*valor_B
+                            else:
+                                fichas = fichas + 3*valor_B
+                            return fichas 
+                    elif not show_ANY:
+                        def anycraps (fichas, valor_C):
+                            if somad == 12 or somad == 2 or somad == 3:
+                                fichas = fichas + 7*valor_C
+                            else:
+                                fichas = fichas - valor_C
+                            return fichas
+                    elif not show_TWELVE:
+                        def twelve (fichas, valor_D):
+                            if somad == 12 : 
+                                fichas = fichas + 30*valor_D
+                            else:
+                                fichas = fichas - valor_D
+                            return fichas
+                    elif not show_PLB:
+                        def plb (fichas, valor_A):
+                            if somad == 7 or somad == 11 :
+                                fichas = fichas + valor_A
+                            elif somad == 2 or somad == 3 or somad == 12:
+                                fichas = fichas - valor_A
+                            else:
+                                print("Entramos na fase 'Point' pois a soma dos dados é de {0}. Vamos jogar novamente os dados e proseguir com o jogo.")
+                                print ("ROOOOOOOOLLL THE DICE!!! ")
+                                dado11 = randint(1,6)
+                                dado22 = randint(1,6)
+                                somad1 = dado11 + dado22
+                                if somad1 == somad:
+                                    fichas = fichas + valor_A
+                                elif somad1 == 7:
+                                    fichas = fichas - valor_A
 
-    #ADICIONAR A EXECUÇÃO DAS APOSTAS AQUI
-                    dado1 = randint
-                    dado2 = randint
-        #obs.: Cada aposta que o jogar selecionou está com o show_NOME como 'FALSE'
-        # use a função if not show_NOME (o 'not' vai fazer com que o FALSE vire true)
-        # e, assim, configure TODAS as regras para o jogo
-                    #Cuidado com o endentamento. Comece daqui
-
+                                
 
 
 
