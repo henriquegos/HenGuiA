@@ -17,6 +17,57 @@ valor_A = 0
 valor_B = 0
 valor_C = 0
 valor_D = 0
+#função para rodar a aposta field
+def field(fichas, valor_B):
+    if somad == 5 or somad == 6 or somad == 7 or somad == 8:
+        fichas = fichas - valor_B
+    elif somad == 3 or somad == 4 or somad == 9 or somad == 10 or somad == 11:
+        fichas = fichas + valor_B
+    elif somad == 2:
+        fichas = fichas + 2*valor_B
+    else:
+        fichas = fichas + 3*valor_B
+    return fichas
+
+#função para rodar a aposta anycraft
+def anycraft(fichas, valor_C):
+    if somad == 12 or somad == 2 or somad == 3:
+        fichas = fichas + 7*valor_C
+    else:
+        fichas = fichas - valor_C
+    return fichas
+
+#função para rodar a aposta twelve
+def twelve (fichas, valor_D):  
+    if somad == 12 : 
+        fichas = fichas + 30*valor_D
+    else:
+        fichas = fichas - valor_D
+    return fichas
+
+#função para rodar a aposta passlinebet
+def plb(fichas, valor_A):
+    if somad == 7 or somad == 11 :
+        fichas = fichas + valor_A
+    elif somad == 2 or somad == 3 or somad == 12:
+        fichas = fichas - valor_A
+    else:
+        print("Entramos na fase 'Point' pois a soma dos dados é de {0}. Vamos jogar novamente os dados e proseguir com o jogo.")                                
+        fase_point = True
+        while fase_point:
+            print("ROOOOOOOOLLL THE DICE!!! ")
+            dado11 = randint(1,6)
+            dado22 = randint(1,6)
+            somad1 = dado11 + dado22
+            if somad1 == somad:
+                fichas = fichas + valor_A
+                fase_point = False
+            elif somad1 == 7:
+                fichas = fichas - valor_A
+                fase_point = False
+    return fichas
+
+
 #INFORMAÇÕES INICIAIS + INSTRUÇÕES
 
 regras = input(" \n => VOCÊ COMEÇA O JOGO COM {0} FICHAS. \n Antes de apostar, quer conhecer as regras? (digite 's' para LER ou 'n' para PULAR e PROSSEGUIR \n #: " .format(fichas)) 
@@ -109,58 +160,29 @@ while not JOGO and CONTINUAR :  #perceba aqui, que para ter JOGO, ele deve estar
                     print ("ROOOOOOOOLLL THE DICE!!! ")
                     JOGO = False
                     CONTINUAR = True 
-                    #começando a executar as regras
+                    #começando a executar as apostas
                     dado1 = randint(1,6)
                     dado2 = randint(1,6)
                     somad = dado1 + dado2
-                    print("Os dados foram jogados, e em um dos dados o valor sorteado é {0} e no outro dado o valor sorteado é {1}. Logo, a soma dos dados é {3}".format(dado1, dado2, somad))
+                    print("Os dados foram jogados, e em um dos dados o valor sorteado é {0} e no outro dado o valor sorteado é {1}. Logo, a soma dos dados é {2}".format(dado1, dado2, somad))
 
                     if not show_FIELD:
-                        def field (fichas, valor_B):
-                            if somad == 5 or somad == 6 or somad == 7 or somad == 8:
-                                fichas = fichas - valor_B
-                            elif somad == 3 or somad == 4 or somad == 9 or somad == 10 or somad == 11:
-                                fichas = fichas + valor_B
-                            elif somad == 2:
-                                fichas = fichas + 2*valor_B
-                            else:
-                                fichas = fichas + 3*valor_B
-                            return fichas 
+                        fichas = field(fichas, valor_B)
+                        print("Agora você tem {0} fichas".format(fichas))
                     elif not show_ANY:
-                        def anycraps (fichas, valor_C):
-                            if somad == 12 or somad == 2 or somad == 3:
-                                fichas = fichas + 7*valor_C
-                            else:
-                                fichas = fichas - valor_C
-                            return fichas
+                        fichas = anycraft(fichas, valor_C)
+                        print("Agora você tem {0} fichas".format(fichas))
                     elif not show_TWELVE:
-                        def twelve (fichas, valor_D):
-                            if somad == 12 : 
-                                fichas = fichas + 30*valor_D
-                            else:
-                                fichas = fichas - valor_D
-                            return fichas
+                        fichas = twelve(fichas, valor_D)
+                        print("Agora você tem {0} fichas".format(fichas))
                     elif not show_PLB:
-                        def plb (fichas, valor_A):
-                            if somad == 7 or somad == 11 :
-                                fichas = fichas + valor_A
-                            elif somad == 2 or somad == 3 or somad == 12:
-                                fichas = fichas - valor_A
-                            else:
-                                print("Entramos na fase 'Point' pois a soma dos dados é de {0}. Vamos jogar novamente os dados e proseguir com o jogo.")
-                                print ("ROOOOOOOOLLL THE DICE!!! ")
-                                dado11 = randint(1,6)
-                                dado22 = randint(1,6)
-                                somad1 = dado11 + dado22
-                                if somad1 == somad:
-                                    fichas = fichas + valor_A
-                                elif somad1 == 7:
-                                    fichas = fichas - valor_A
-
-                                
-
-
-
+                        fichas = plb(fichas, valor_A)
+                        print("Agora você tem {0} fichas".format(fichas))
+                    
+                    show_PLB = True
+                    show_ANY = True
+                    show_FIELD = True
+                    show_TWELVE = True    
                 elif confirmar_apostas == 'n':
                     show_PLB = True
                     show_ANY = True
