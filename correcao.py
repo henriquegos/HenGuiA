@@ -135,7 +135,7 @@ while not JOGO and CONTINUAR :  #perceba aqui, que para ter JOGO, ele deve estar
             print (" _C-) ANY CRAPS" )
         if show_TWELVE:
             print (" _D-) TWELVE" ) 
-        pergunta1 = input(" \n ¬ Para escolher a modalidade, digite a letra correspondente (em maiúscula). \n ¬ Para sair, digite SAIR. \n\n ... Digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! ($$)   \n  #: ")
+        pergunta1 = input(" \n ¬ Para escolher a modalidade, digite a letra correspondente (em maiúscula). \n ¬ Para sair, digite SAIR. \n Obs.: Você pode apostar em mais de uma modalidade, mas deve fazer uma aposta por vez e depois digitar 'jogar' \n\n ... Digite 'jogar' para ROLAR OS DADOS e tentar a sorte!! ($$)   \n  #: ")
 
         if pergunta1 == 'A':
             show_PLB = False
